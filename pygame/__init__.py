@@ -83,6 +83,7 @@ __version__ = ver
 from . import time
 from . import display
 from . import constants
+from . import draw
 from . import event
 from . import font
 from . import mixer
