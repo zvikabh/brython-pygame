@@ -1,5 +1,4 @@
-from browser import document, html, window
-from javascript import console, JSConstructor
+from browser import console, document, html, window
 
 from .rect import Rect
 #import pygame.rect
