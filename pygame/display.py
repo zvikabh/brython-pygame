@@ -50,7 +50,6 @@ from browser import window
 
 _display_surface = None
 _icon_was_set = 0
-_icon_defaultname = 'pygame_icon.bmp'
 
 _init_video=False
 
@@ -196,17 +195,6 @@ def set_mode(resolution, flags=0, depth=0):
         _display_surface = pygame.surface.Surface(dim=(w,h))
 
     document['pydiv'] <= _display_surface.canvas
-
-    if sys.platform != 'darwin':
-        if not _icon_was_set:
-            try:
-                file = pygame.pkgdata.getResource(_icon_defaultname)
-                iconsurf = pygame.image.load(file)
-                SDL_SetColorKey(iconsurf._surf, SDL_SRCCOLORKEY, 0)
-                set_icon(iconsurf)
-            except IOError:
-                # Not worth dying over.
-                pass
 
     return _display_surface
 
