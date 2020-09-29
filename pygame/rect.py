@@ -9,7 +9,7 @@ __version__ = '$Id$'
 import copy
 
 #import SDL.video
-import SDL
+from . import SDL
 
 class _RectProxy:
     '''Proxy for SDL_Rect that can handle negative size.'''

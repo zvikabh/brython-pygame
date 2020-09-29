@@ -39,7 +39,7 @@ __version__ = '$Id$'
 
 import sys
 
-from SDL import *
+from pygame.SDL import *
 import pygame.base
 import pygame.pkgdata
 import pygame.surface
@@ -47,7 +47,6 @@ import pygame.surface
 #brython
 import pygame.constants
 from browser import window
-#from javascript import console
 
 _display_surface = None
 _icon_was_set = 0
