@@ -25,7 +25,7 @@ class Queue:
 
 dm={}
 
-def aaline(canvas, color, startpos, endpos, width, outline, blend=1):
+def aaline(canvas, color, startpos, endpos, blend=1):
     #console.log("aaline")
     if canvas not in dm:
        dm[canvas]=DrawManager(canvas)
