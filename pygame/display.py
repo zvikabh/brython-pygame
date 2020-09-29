@@ -193,7 +193,6 @@ def set_mode(resolution, flags=0, depth=0):
     if _display_surface:
         _display_surface._surf = surf
     else:
-        #_display_surface = pygame.surface.Surface(surf=surf)
         _display_surface = pygame.surface.Surface(dim=(w,h))
 
     document['pydiv'] <= _display_surface.canvas
