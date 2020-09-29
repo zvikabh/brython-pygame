@@ -4,32 +4,22 @@ from .rect import Rect
 #import pygame.rect
 
 canvas_ID=1
-
 _canvas_id=None
 
 class Surface:
   def __init__(self, dim=[], depth=16, surf=None):
+      global canvas_ID
       if surf is None:
          self._depth=depth
          self._canvas=html.CANVAS(width=dim[0], height=dim[1])
       elif isinstance(surf, Surface):
          self._canvas=surf.copy()
-         #self._width=surf.get_width()
-         #self._height=surf.get_height()
       elif isinstance(surf, html.CANVAS):
          self._canvas=surf
-         #self._width=surf.style.width
-         #self._height=surf.style.height
 
       self._context=self._canvas.getContext('2d')
       self._canvas.id='layer_%s' % canvas_ID
-      #setattr(self._canvas.style, 'z-index',canvas_ID)
-      #setattr(self._canvas.style, 'position', 'relative')
-      #setattr(self._canvas.style, 'left', '0px')
-      #setattr(self._canvas.style, 'top', '0px')
-      canvas_ID+=1
-
-      #document['pydiv'] <= self._canvas
+      canvas_ID += 1
 
   def blit(self, source, dest, area=None, special_flags=0):
       #if area is None and isinstance(source, str):
