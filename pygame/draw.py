@@ -1,5 +1,4 @@
-from javascript import console
-from browser import timer
+from browser import console, timer
 import math
 
 class Queue:

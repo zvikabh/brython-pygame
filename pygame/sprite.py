@@ -469,7 +469,7 @@ class AbstractGroup(object):
         Draws all of the member sprites onto the given surface.
 
         """
-        #from javascript import console
+        #from browser import console
         sprites = self.sprites()
         surface_blit = surface.blit
         for spr in sprites:

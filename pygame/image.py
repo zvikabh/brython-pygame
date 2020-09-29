@@ -39,8 +39,8 @@ PNG, JPEG saving new in pygame 1.8.
 __docformat__ = 'restructuredtext'
 __version__ = '$Id$'
 
-from browser import html, window
-from javascript import JSConstructor, console
+from browser import console, html, window
+from javascript import JSConstructor
 
 #import os.path
 import os
