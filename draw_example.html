@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"></script>    
+</head>
+
+<body onload="brython(1)">
+
+<script type="text/python">
+from browser import document
+import pygame as pg
+
+pg.init()
+squares_X = 20
+squares_Y = 20
+num_bombs = 60
+window_width = 500
+window_height = 500
+square_height = window_height // squares_Y
+square_width = window_width // squares_X
+darachti = []
+simanti = []
+bombs = []
+screen = pg.display.set_mode((window_width, window_height))
+
+def draw():
+    screen.fill([255, 255, 255])
+    for i in range(squares_Y+1):
+        pg.draw.aaline(screen, [170, 170, 170],
+                   [0, square_height*i],
+                   [square_width*squares_X, square_height*i])
+    for i in range(squares_X+1):
+        pg.draw.aaline(screen, [170, 170, 170],
+                       [square_width*i, 0],
+                       [square_width*i, square_height*squares_Y])
+    pg.draw.lines(screen, [255,0,0,128], True, [(20,20),(80,20),[80,80]], 5)
+    pg.draw.rect(screen, [0, 200, 0], pg.Rect((150,50), (100,100)), width=0)
+    pg.draw.rect(screen, [0, 200, 0], pg.Rect((150,350), (100,100)), width=4)
+    pg.draw.polygon(screen, [0, 0, 128], [(200,200), (280,150), (240,140)])
+    pg.draw.polygon(screen, [0, 0, 128], [(300,250), (280,150), (200,200)], width=5)
+    pg.draw.ellipse(screen, [0, 0, 192], pg.Rect((300,300), (30,30)))
+    pg.draw.ellipse(screen, [0, 0, 192], pg.Rect((270,270), (90,70)), width=3)
+    pg.display.update()
+
+draw()
+</script>
+
+<div id="pydiv"></div>
+
+</body>
+
+</html>

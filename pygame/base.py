@@ -34,6 +34,9 @@ _quitfunctions = []
 class error(RuntimeError):
     pass
 
+def tuple_to_css_color(color):
+    return f'rgb%r' % (tuple(color),)
+
 def init():
     '''Autoinitialize all imported pygame modules.
 

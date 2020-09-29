@@ -1,7 +1,7 @@
 from browser import console, document, html, window
 
 from .rect import Rect
-#import pygame.rect
+from . import base
 
 canvas_ID=1
 _canvas_id=None
@@ -72,7 +72,7 @@ class Surface:
              
   def fill(self, color):
       """ fill canvas with this color """
-      self._context.fillStyle="rgb(%s,%s,%s)" % color
+      self._context.fillStyle = base.tuple_to_css_color(color)
       #console.log(self._canvas.width, self._canvas.height, self._context.fillStyle)
       self._context.fillRect(0,0,self._canvas.width,self._canvas.height)
       #self._context.fill()
@@ -88,6 +88,10 @@ class Surface:
   @property
   def canvas(self):
       return self._canvas
+
+  @property
+  def context(self):
+      return self._context
 
   def scroll(self, dx=0, dy=0):
       _imgdata=self._context.toDataURL('image/png')
